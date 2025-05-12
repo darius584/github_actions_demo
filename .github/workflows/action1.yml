@@ -1,10 +1,17 @@
 name: action1
-on: workflow_dispatch
+on: push
 jobs:
-  job1:
+  test:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Print greeting
-        run: echo 'Hello, world!'
-      - name: Print bye
-        run: echo 'Bye'
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      # - name: Setup nodejs  # already installed v20
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+
