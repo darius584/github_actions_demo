@@ -7,10 +7,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Print
-        uses: ./.github/workflows/actions/node-action
       - name: Get code
         uses: actions/checkout@v3
+      - name: Print
+        uses: ./.github/workflows/actions/node-action
       - name: Load dependencies
         uses: ./.github/workflows/actions/cached-deps
       - name: Lint code
