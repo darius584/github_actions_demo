@@ -1,0 +1,11 @@
+name: Test action
+description: 'description :)'
+inputs:
+    caching:
+        description: 'Cache or not'
+        required: false
+        default: 'true'
+        type: boolean
+runs:
+    using: 'node20'
+    main: 'main.js'
