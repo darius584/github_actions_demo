@@ -4,7 +4,7 @@ inputs:
     caching:
         description: 'Cache or not'
         required: false
-        default: true
+        default: 'true'
         type: boolean
 runs:
     using: 'composite' # !!!
