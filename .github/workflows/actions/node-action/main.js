@@ -1,5 +1,6 @@
 const core = require('@actions/core')
 function fun() {
-    core.notice('hello')    
+    const msg = core.getInput('msg')
+    core.notice(msg)    
 }
 fun();
