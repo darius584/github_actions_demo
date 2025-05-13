@@ -1,9 +1,16 @@
 name: 'Get & cache dependencies'
 description: 'description :)'
+inputs:
+    caching:
+        description: 'Cache or not'
+        required: false
+        default: true
+        type: boolean
 runs:
     using: 'composite' # !!!
     steps:
         - name: Cache dependencies
+          if: inputs.caching
           id: cache
           uses: actions/cache@v3
           with:
